@@ -1,0 +1,20 @@
+[
+  {
+    "company_number": "12345678",
+    "country_alpha_2_iso_code": "GB",
+    "name": "ANYCOMPANYNAME LIMITED",
+    "id": 1,
+    "scores": [],
+    "created_at": "2023-02-24 12:00:00-00",
+    "updated_at": "2023-02-24 12:00:00-00"
+  },
+  {
+    "company_number": "87654321",
+    "country_alpha_2_iso_code": "GB",
+    "name": "ANOTHERCOMPANY LIMITED",
+    "id": 2,
+    "scores": [],
+    "created_at": "2023-02-24 12:00:00-00",
+    "updated_at": "2023-02-24 12:00:00-00"
+  }
+]

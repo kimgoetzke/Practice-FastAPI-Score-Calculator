@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "practice-fastapi-postgres"
+version = "0.1.0"
+description = "A project to practice Python and FastAPI."
+authors = ["kimgoetzke <120580433+kimgoetzke@users.noreply.github.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "practice_fastapi_postgres"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+uvicorn = "^0.20.0"
+fastapi = "^0.92.0"
+pydantic = "^1.10.5"
+sqlalchemy = "^2.0.4"
+psycopg2-binary = "^2.9.5"
+alembic = "^1.9.4"
+httpx = "^0.23.3"
+pytest = "^7.2.1"
+python-dotenv = "^1.0.0"
+pytest-mock = "^3.10.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+pythonpath = "src"

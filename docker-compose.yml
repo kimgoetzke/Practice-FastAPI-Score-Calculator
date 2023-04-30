@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  app:
+    container_name: app
+    image: 'practice-python-fastapi:latest' #image: 'kimgoetzke/practice-python-fastapi:latest'
+    build:
+      context: .
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    command: bash -c "alembic upgrade head && uvicorn main:app --host 0.0.0.0 --port 8080"
+
+  db:
+    image: 'postgres:15.2-alpine'
+    ports:
+      - "5432:5432"
+    container_name: db
+    environment:
+      POSTGRES_DB: python_fastapi_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      PGDATA: /data/postgres
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -d python_fastapi_db -U postgres" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: pgadmin4@pgadmin.org
+      PGADMIN_DEFAULT_PASSWORD: password
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    ports:
+      - "5050:80"
+    depends_on:
+      - db
+    volumes:
+      - ./resources/pgadmin:/var/lib/pgadmin

@@ -1,0 +1,16 @@
+[
+  {
+    "alpha_2_iso_code": "GB",
+    "name": "United Kingdom",
+    "company_number_regex": "^([a-zA-Z]{2}[0-9]{6}|[0-9]{8})$",
+    "created_at": "2023-02-24 12:00:00-00",
+    "updated_at": "2023-02-24 12:00:00-00"
+  },
+  {
+    "alpha_2_iso_code": "US",
+    "name": "United States",
+    "company_number_regex": "^[0-9]{2}-[0-9]{7}]$",
+    "created_at": "2023-02-24 12:00:00-00",
+    "updated_at": "2023-02-24 12:00:00-00"
+  }
+]
